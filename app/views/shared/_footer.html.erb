@@ -1,22 +1,6 @@
 <footer class="footer mt-auto py-3">
   <div class="container">
     <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-5 mb-0 text-muted">&copy; <%= Time.now.year %> <%= _('Peter') %> Giacomo Lombardo<% if Settings.show_version %>, v<%= Version.current %><% end %></p>
-
-      <%= link_to root_path(locale: locale.to_s), class: "col-md-2 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none" do %>
-        <picture>
-          <% if Settings.brand.nil? || Settings.brand.light_logo.nil? %>
-            <source srcset="<%= asset_path('logo-transparent-sm-bare.png') %>" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-            <source srcset="<%= asset_path('logo-transparent-sm-dark-bare.png') %>" media="(prefers-color-scheme: dark)">
-            <img src="<%= asset_path('logo-transparent-sm-bare.png') %>" alt="<%= _('Password Pusher Logo') %>" style='height: 40px;'>
-          <% else %>
-            <source srcset="<%= Settings.brand.light_logo %>" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-            <source srcset="<%= Settings.brand.dark_logo %>" media="(prefers-color-scheme: dark)">
-            <img src="<%= Settings.brand.light_logo %>" alt="<%= _('Password Pusher Logo') %>" style='height: 40px;'>
-          <% end %>
-        </picture>
-      <% end %>
-
       <% if Settings.brand.show_footer_menu %>
         <ul class="nav col-md-5 justify-content-end">
           <li class="nav-item"><%= link_to _('Front Page'), root_path(locale: locale.to_s), class: 'nav-link px-2 text-muted' %></li>
@@ -56,10 +40,14 @@
         </ul>
       <% end %>
     </div>
-    <% if Settings.brand.disclaimer %>
     <div>
-      <p class="fw-light fst-italic text-center" style="font-size: .9rem;"><%= Settings.brand.disclaimer %></p>
+      <p class="fw-light fst-italic text-center" style="font-size: .9rem;">
+      The information provided or shared by this website comes with no warranty of any kind, expressed or implied, regarding confidentiality, integrity, or availability. Under no circumstances will <a href="https://ivancarlos.com.br" target="_blank">Ivan Carlos Consultoria</a> be liable to you for any loss or damage of any kind incurred as a result of using the website. Visit <a href="https://pad.vg/privacy" target="_blank">pad.vg/privacy</a> to review our privacy policy. Recreated by <a href="https://pad.vg/ivancarlos" target="_blank">Ivan Carlos</a> for exclusive internal use.
+      <br /><br />
+      As informações fornecidas ou compartilhadas por esse site não possuem garantia de qualquer tipo, expressa ou implícita, quanto à confidencialidade, integridade ou disponibilidade. Em nenhuma circunstância <a href="https://ivancarlos.com.br" target="_blank">Ivan Carlos Consultoria</a> terá qualquer responsabilidade para com você por qualquer perda ou dano de qualquer tipo incorrido como resultado do uso do site. Acesse <a href="https://pad.vg/privacidade" target="_blank">pad.vg/privacidade</a> para consultar nossa política de privacidade. Recriado por <a href="https://pad.vg/ivancarlos" target="_blank">Ivan Carlos</a> para uso exclusivo e interno.
+      <br /><br />
+      La información proporcionada o compartida por este sitio no tiene garantía de ningún tipo, expresa o implícita, en cuanto a confidencialidad, integridad o disponibilidad. En ningún caso, <a href="https://ivancarlos.com.br" target="_blank">Ivan Carlos Consultoria</a> será responsable ante usted por cualquier pérdida o daño de cualquier tipo incurrido como resultado del uso del sitio. Visite <a href="https://pad.vg/privacidad" target="_blank">pad.vg/privacidad</a> para consultar nuestra política de privacidad. Recreado por <a href="https://pad.vg/ivancarlos" target="_blank">Ivan Carlos</a> para uso exclusivo e interno.
+      </p>
     </div>
-    <% end %>
   </div>
 </footer>
